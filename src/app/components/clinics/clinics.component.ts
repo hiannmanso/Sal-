@@ -15,7 +15,7 @@ export class ClinicsComponent {
   }
   getClinics(): void {
     this.infosDbService
-      .getAll('clinicas')
+      .getAllClinics()
       .subscribe((clinics) => (this.clinics = clinics));
   }
 }

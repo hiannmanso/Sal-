@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClinicsComponent } from './components/clinics/clinics.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SchedulingComponent } from './components/scheduling/scheduling.component';
 @NgModule({
-  declarations: [AppComponent, ClinicsComponent],
+  declarations: [AppComponent, ClinicsComponent, SchedulingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
