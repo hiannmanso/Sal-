@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Clinic } from '../interfaces/clinic';
+import { Clinic } from 'src/app/interfaces/Clinic';
+
 import { InfosDbService } from 'src/app/services/infos-db.service';
+
 @Component({
   selector: 'app-clinics',
   templateUrl: './clinics.component.html',
@@ -8,5 +10,12 @@ import { InfosDbService } from 'src/app/services/infos-db.service';
 })
 export class ClinicsComponent {
   clinics: Clinic[] = [];
-  constructor() {}
+  constructor(private infosDbService: InfosDbService) {
+    this.getClinics();
+  }
+  getClinics(): void {
+    this.infosDbService
+      .getAll('clinicas')
+      .subscribe((clinics) => (this.clinics = clinics));
+  }
 }

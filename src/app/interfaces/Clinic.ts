@@ -1,6 +1,6 @@
 export interface Clinic {
   id: number;
-  name: string;
+  nome: string;
   cnpj: string;
   especialidade: string;
   telefone: string;
