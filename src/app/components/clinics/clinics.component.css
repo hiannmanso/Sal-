@@ -1,0 +1,132 @@
+body {
+  padding-top: 125px;
+  background-color: #f9f9f9;
+  word-break: break-word;
+  width: 100vw;
+}
+.modal {
+  width: 125px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-left: 15px;
+  padding: 10px;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 7px;
+  padding: 15px;
+  height: 257px;
+  /* min-width: 200px; */
+}
+h1,
+h2,
+h3,
+p {
+  padding: 3px;
+}
+h1 {
+  padding-bottom: 0;
+  height: 30px;
+}
+h2 {
+  padding-bottom: 0;
+  height: 25px;
+}
+small {
+  padding-left: 3px;
+}
+.footer {
+  padding: 15px;
+  height: 100px;
+  width: calc(100%-15px);
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+small {
+  font-weight: 200;
+  font-style: italic;
+}
+.adress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.closetag,
+.addtag,
+.edittag {
+  width: 20px;
+  opacity: 0.5;
+}
+.searchtag {
+  width: 25px;
+}
+.closetag:hover,
+.edittag:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+
+  flex-direction: row;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 420px) {
+  .card {
+    min-height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: scroll;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 12px;
+  }
+  .adress {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+  }
+}

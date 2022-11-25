@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Clinic } from 'src/app/interfaces/Clinic';
 import { ClinicService } from 'src/app/services/clinicService/clinic.service';
 @Component({
@@ -25,6 +25,7 @@ export class ModalClinicComponent {
       fim: '',
     },
   };
+  @Input() modal: boolean = false;
   constructor(private clinicService: ClinicService) {}
   addNewClinic(): void {
     console.log(this.data);
@@ -44,5 +45,8 @@ export class ModalClinicComponent {
     ) {
       this.clinicService.insert(this.data).subscribe();
     }
+  }
+  setModal() {
+    this.modal = this.modal;
   }
 }

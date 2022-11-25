@@ -9,7 +9,11 @@ import { ClinicService } from 'src/app/services/clinicService/clinic.service';
 })
 export class ClinicsComponent {
   clinics: Clinic[] = [];
-
+  modal = false;
+  closetag = '/assets/close-circle-outline.svg';
+  addtag = '/assets/add-outline.svg';
+  edittag = '/assets/edit-outline.svg';
+  searchtag = '/assets/search.svg';
   constructor(private clinicService: ClinicService) {
     this.getClinics();
   }
@@ -25,5 +29,8 @@ export class ClinicsComponent {
   updateClinic(clinic: Clinic): void {
     this.clinicService.update(clinic).subscribe();
     this.getClinics();
+  }
+  setModal() {
+    this.modal = !this.modal;
   }
 }

@@ -1,23 +1,67 @@
-<app-modal-clinic></app-modal-clinic>
-<ul *ngFor="let clinic of clinics">
-  <button (click)="deleteClinic(clinic.id)">x</button>
-  <button (click)="updateClinic(clinic)">U</button>
-  <li>id: {{ clinic.id }}</li>
-  <li>nome: {{ clinic.nome }}</li>
-  <li>cnpj: {{ clinic.cnpj }}</li>
-  <li>especialidade: {{ clinic.especialidade }}</li>
-  <li>telefone: {{ clinic.telefone }}</li>
-  <li>cep: {{ clinic.cep }}</li>
-  <li>endereço: {{ clinic["endereço"] }}</li>
-  <li>numero: {{ clinic.numero }}</li>
-  <li>bairro: {{ clinic.bairro }}</li>
-  <li>estado: {{ clinic.estado }}</li>
-  <li>status: {{ clinic.status }}</li>
-  <li>preço: {{ clinic["preço"] }}</li>
-  <p>Atendimento</p>
-  <li>inicio: {{ clinic.atendimento.inicio }}</li>
-  <li>fim:{{ clinic.atendimento.fim }}</li>
-  <br />
-  <br />
-  <br />
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <app-modal-clinic *ngIf="modal" [modal]="modal"></app-modal-clinic>
+    <div class="navbar">
+      <div class="icons">
+        <input class="search" type="text" placeholder="pesquisar" />
+        <a><img src="{{ searchtag }}" class="searchtag" /></a>
+      </div>
+      <button (click)="setModal()" class="modal">
+        <img />Adicionar nova clínica
+      </button>
+    </div>
+    <div class="cards">
+      <div *ngFor="let clinic of clinics" class="card">
+        <div class="buttons">
+          <img
+            src="{{ edittag }}"
+            alt="update"
+            (click)="updateClinic(clinic)"
+            class="closetag"
+          />
+          <img
+            src="{{ closetag }}"
+            alt="x"
+            (click)="deleteClinic(clinic.id)"
+            class="edittag"
+          />
+        </div>
+
+        <h1>{{ clinic.nome | uppercase }}</h1>
+        <h2>{{ clinic.especialidade | titlecase }}</h2>
+        <small>cnpj: {{ clinic.cnpj }}</small>
+        <div class="adress">
+          <p>
+            <span class="city">
+              <b>{{ clinic.estado | uppercase }}</b> {{ clinic.bairro }}:
+            </span>
+            {{ clinic["endereço"] }} n°{{ clinic.numero }}
+          </p>
+          <small class="cep"
+            >cep: <br />
+            {{ clinic.cep }}</small
+          >
+        </div>
+        <p><b>telefone:</b> {{ clinic.telefone }}</p>
+
+        <div class="footer">
+          <div>
+            <p><b>status:</b> {{ clinic.status }}</p>
+            <b>
+              <{{ clinic.atendimento.inicio }}h - {{ clinic.atendimento.fim }}h>
+            </b>
+          </div>
+
+          <b>R$ {{ clinic["preço"] }}</b>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

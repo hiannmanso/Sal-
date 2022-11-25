@@ -1,5 +1,23 @@
-<div *ngIf="homepage">
-  <button routerLink="/clinics">Ver todas as clinicas</button>
-  <button routerLink="/schedulings">Ver todos os agendamentos</button>
+<div *ngIf="homepage" class="home">
+  <img src="{{ imagePath }}" alt="salú" />
+  <div class="buttons">
+    <button
+      [ngStyle]="{ background: '#4E3D8E', color: 'white' }"
+      routerLink="/clinics"
+      (click)="setHome()"
+    >
+      Ver todas as clinicas
+    </button>
+
+    <button
+      [ngStyle]="{ background: '#AF004A', color: 'white' }"
+      routerLink="/schedulings"
+      (click)="setHome()"
+    >
+      Ver todos os agendamentos
+    </button>
+  </div>
 </div>
+
+<app-header *ngIf="homepage === false"></app-header>
 <router-outlet></router-outlet>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   homepage = true;
+  imagePath = '/assets/logo-salu.png';
+  setHome(){
+    this.homepage = !this.homepage
+  }
 }
