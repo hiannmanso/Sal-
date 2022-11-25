@@ -1,3 +1,5 @@
-<button routerLink="/clinics">Ver todas as clinicas</button>
-<button routerLink="/schedulings">Ver todos os agendamentos</button>
+<div *ngIf="homepage">
+  <button routerLink="/clinics">Ver todas as clinicas</button>
+  <button routerLink="/schedulings">Ver todos os agendamentos</button>
+</div>
 <router-outlet></router-outlet>

@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { ClinicsComponent } from './components/clinics/clinics.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SchedulingComponent } from './components/scheduling/scheduling.component';
+import { FormsModule } from '@angular/forms';
+import { ModalClinicComponent } from './components/modal-clinic/modal-clinic.component';
 @NgModule({
-  declarations: [AppComponent, ClinicsComponent, SchedulingComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, ClinicsComponent, SchedulingComponent, ModalClinicComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

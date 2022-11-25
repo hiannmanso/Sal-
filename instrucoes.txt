@@ -1,0 +1,24 @@
+Instruções:
+
+O teste consiste em desenvolver duas páginas dentro de um mesmo projeto.
+
+Uma das páginas deverá conter um CRUD de clinicas, utilizando o arquivo JSON de clinicas.
+	- A Listagem de clínicas deve ser uma tabela;
+	- Deve conter um filtro por nome de clinica;
+	
+A outra página deverá conter cards com os agendamentos realizados, utilizando o JSON de agendamentos.
+	- Deve conter um Filtro por Nome;
+
+
+O projeto deverá ser desenvolvido em Angular.
+Ao terminar, subir no git e enviar link do repositório.
+
+
+O que não é obrigatório mas será considerado como pontos adicionais:
+ - Layout;
+ - UX;
+ - Responsividade;
+ - Ordenação da tabela;
+ - Filtro avançado;
+ - git flow;
+ 

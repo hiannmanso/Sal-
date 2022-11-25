@@ -1,16 +1,19 @@
+<app-modal-clinic></app-modal-clinic>
 <ul *ngFor="let clinic of clinics">
+  <button (click)="deleteClinic(clinic.id)">x</button>
+  <button (click)="updateClinic(clinic)">U</button>
   <li>id: {{ clinic.id }}</li>
   <li>nome: {{ clinic.nome }}</li>
   <li>cnpj: {{ clinic.cnpj }}</li>
   <li>especialidade: {{ clinic.especialidade }}</li>
   <li>telefone: {{ clinic.telefone }}</li>
   <li>cep: {{ clinic.cep }}</li>
-  <li>endereço: {{ clinic.endereco }}</li>
+  <li>endereço: {{ clinic["endereço"] }}</li>
   <li>numero: {{ clinic.numero }}</li>
   <li>bairro: {{ clinic.bairro }}</li>
   <li>estado: {{ clinic.estado }}</li>
   <li>status: {{ clinic.status }}</li>
-  <li>preço: {{ clinic.preco }}</li>
+  <li>preço: {{ clinic["preço"] }}</li>
   <p>Atendimento</p>
   <li>inicio: {{ clinic.atendimento.inicio }}</li>
   <li>fim:{{ clinic.atendimento.fim }}</li>

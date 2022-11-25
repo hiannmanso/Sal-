@@ -5,12 +5,12 @@ export interface Clinic {
   especialidade: string;
   telefone: string;
   cep: string;
-  endereco: string;
+  endereço: string;
   numero: string;
   bairro: string;
   estado: string;
   status: string;
-  preco: number;
+  preço: number;
   atendimento: {
     inicio: string;
     fim: string;

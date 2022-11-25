@@ -63,7 +63,7 @@
       "cidade": "Altair",
       "estado": "SP",
       "status": "Ativo",
-      "preço": 100.0,
+      "preço": 100,
       "atendimento": {
         "inicio": "09:00",
         "fim": "17:00"
@@ -127,61 +127,23 @@
       }
     },
     {
-      "id": 5,
-      "nome": "FISIOMED",
-      "cnpj": "36.480.001/0001-28",
+      "nome": "hiann",
+      "cnpj": "14945970",
       "especialidade": "Fisioterapia",
-      "telefone": "(11) 1827-6456",
-      "cep": "08430-860",
-      "endereço": "Rua Balandia",
-      "numero": 12,
-      "bairro": "Jardim Moreno",
-      "cidade": "São Paulo",
+      "telefone": "42 1587-4396",
+      "cep": "14945970",
+      "endereço": "Rua Ademar de Barros",
+      "numero": 394,
+      "bairro": "Cambaratiba",
+      "cidade": "Cambaratiba",
       "estado": "sp",
       "status": "ativo",
-      "preço": 175,
+      "preço": 147.85,
       "atendimento": {
-        "inicio": "06:00",
-        "fim": "20:00"
-      }
-    },
-    {
-      "id": 6,
-      "nome": "fisio center",
-      "cnpj": "19.256.606/0001-10",
-      "especialidade": "fisioterapia",
-      "telefone": "115854-8596",
-      "cep": "04928210",
-      "endereço": "Rua Rampur",
-      "numero": 25,
-      "bairro": "Praia Azul",
-      "cidade": "São Paulo",
-      "estado": "sp",
-      "status": "Ativo",
-      "preço": 200,
-      "atendimento": {
-        "inicio": "06:00",
-        "fim": "20:00"
-      }
-    },
-    {
-      "id": 7,
-      "nome": "Laborial",
-      "cnpj": "95.261.818/0001-74",
-      "especialidade": "Exames Laboratóriais",
-      "telefone": "3585214793",
-      "cep": "65578971",
-      "endereço": "Rua Manoel Pereira",
-      "numero": 179,
-      "bairro": "Centro",
-      "cidade": "Água Doce do Maranhão",
-      "estado": "MA",
-      "status": "Ativo",
-      "preço": 144.9,
-      "atendimento": {
-        "inicio": "09:00",
+        "inicio": "08:00",
         "fim": "17:00"
-      }
+      },
+      "id": 5
     }
   ]
 }

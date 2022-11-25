@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Scheduling } from 'src/app/interfaces/Scheduling';
 import { InfosDbService } from 'src/app/services/infos-db.service';
+import { SchedulingService } from 'src/app/services/schedulingService/scheduling.service';
 @Component({
   selector: 'app-scheduling',
   templateUrl: './scheduling.component.html',
@@ -8,13 +9,13 @@ import { InfosDbService } from 'src/app/services/infos-db.service';
 })
 export class SchedulingComponent {
   schedulings: Scheduling[] = [];
-  constructor(private infosDbService: InfosDbService) {
+  constructor(private schedulingService: SchedulingService) {
     this.getSchedulings();
   }
 
   getSchedulings(): void {
-    this.infosDbService
-      .getAllSchedulings()
+    this.schedulingService
+      .getAll()
       .subscribe((schedulings) => (this.schedulings = schedulings));
   }
 }
