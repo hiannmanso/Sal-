@@ -94,7 +94,6 @@ export class ClinicsComponent {
     for (const clinic of this.clinics) {
       if (clinic.nome.toUpperCase() === this.clinicSearch.toUpperCase()) {
         this.clinics = [clinic];
-        console.log(clinic);
       }
     }
     if (this.clinicSearch === '') {

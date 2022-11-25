@@ -13,9 +13,7 @@ export class ModalClinicComponent {
   @Input() data!: Clinic;
   @Input() modal!: boolean;
   @Input() isUpdate!: boolean;
-  constructor(private clinicService: ClinicService) {
-    console.log(this.data, this.isUpdate);
-  }
+  constructor(private clinicService: ClinicService) {}
   async addNewClinic() {
     if (
       this.data.nome === '' ||
@@ -71,7 +69,6 @@ export class ModalClinicComponent {
 
       this.isUpdate = false;
       this.setModal();
-      console.log('TAUPDATANDOAINDA?', this.isUpdate);
     }
   }
   setModal() {

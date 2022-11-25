@@ -38,7 +38,6 @@ export class ClinicService {
     return this.http.delete<Clinic>(`${this.apiURL}/clinicas/${id}`);
   }
   update(clinic: Clinic): Observable<Clinic> {
-    console.log(clinic.id);
     return this.http.put<Clinic>(
       `${this.apiURL}/clinicas/${clinic.id}`,
       clinic

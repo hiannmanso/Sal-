@@ -21,14 +21,12 @@ export class SchedulingComponent {
       .subscribe((schedulings) => (this.schedulings = schedulings));
   }
   searching(): void {
-    console.log('entrou');
     for (const scheduling of this.schedulings) {
       if (
         scheduling.paciente.toUpperCase() ===
         this.schedulingSearch.toUpperCase()
       ) {
         this.schedulings = [scheduling];
-        console.log(scheduling);
       }
     }
     if (this.schedulingSearch === '') {
