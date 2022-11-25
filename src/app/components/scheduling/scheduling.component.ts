@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Scheduling } from 'src/app/interfaces/Scheduling';
-import { InfosDbService } from 'src/app/services/infos-db.service';
+
 import { SchedulingService } from 'src/app/services/schedulingService/scheduling.service';
 @Component({
   selector: 'app-scheduling',

@@ -13,7 +13,7 @@ export class ClinicsComponent {
   showCards: boolean = false;
   showTable: boolean = true;
   isUpdate: boolean = false;
-  clinicSchema = {
+  clinicSchema: Clinic = {
     id: 0,
     nome: '',
     cnpj: '',

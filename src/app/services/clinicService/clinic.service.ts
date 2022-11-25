@@ -7,25 +7,8 @@ import { Clinic } from 'src/app/interfaces/Clinic';
   providedIn: 'root',
 })
 export class ClinicService {
-  apiURL = 'http://localhost:3000';
-  data = {
-    nome: 'hiann',
-    cnpj: '14945970',
-    especialidade: 'Fisioterapia',
-    telefone: '42 1587-4396',
-    cep: '14945970',
-    endereço: 'Rua Ademar de Barros',
-    numero: 394,
-    bairro: 'Cambaratiba',
-    cidade: 'Cambaratiba',
-    estado: 'sp',
-    status: 'ativo',
-    preço: 147.85,
-    atendimento: {
-      inicio: '08:00',
-      fim: '17:00',
-    },
-  };
+  apiURL: string = 'http://localhost:3000';
+
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Clinic[]> {
@@ -34,7 +17,7 @@ export class ClinicService {
   insert(clinic: Clinic): Observable<Clinic> {
     return this.http.post<Clinic>(`${this.apiURL}/clinicas`, clinic);
   }
-  delete(id: number) {
+  delete(id: number): Observable<Clinic> {
     return this.http.delete<Clinic>(`${this.apiURL}/clinicas/${id}`);
   }
   update(clinic: Clinic): Observable<Clinic> {
