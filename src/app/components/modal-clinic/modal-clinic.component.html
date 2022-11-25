@@ -9,7 +9,13 @@
   <body>
     <div *ngIf="modal" class="modalContainer">
       <div class="opacity" (click)="setModal()"></div>
-      <div class="modal">
+      <div *ngIf="!isUpdate" class="modal">
+        <img
+          src="{{ closetag }}"
+          alt="closetag"
+          (click)="setModal()"
+          class="icon"
+        />
         <h3>Nova Clínica</h3>
         <form method="post">
           <span>
@@ -55,6 +61,12 @@
               [(ngModel)]="data.numero"
               name="data.numero"
             />
+            <input
+              type="text"
+              placeholder="cidade"
+              [(ngModel)]="data.cidade"
+              name="data.cidade"
+            />
           </span>
           <span>
             <input
@@ -96,6 +108,106 @@
           </span>
         </form>
         <button (click)="addNewClinic()">ADICIONAR</button>
+      </div>
+      <div *ngIf="isUpdate" class="modal">
+        <img
+          src="{{ closetag }}"
+          alt="closetag"
+          (click)="setModal()"
+          class="icon"
+        />
+        <h3>Editar Clínica</h3>
+        <form method="post">
+          <span>
+            <input
+              type="text"
+              placeholder="nome"
+              [(ngModel)]="data.nome"
+              name="data.nome"
+            />
+            <input
+              type="text"
+              placeholder="cnpj"
+              [(ngModel)]="data.cnpj"
+              name="data.cnpj"
+            />
+            <input
+              type="text"
+              placeholder="especialidade"
+              [(ngModel)]="data.especialidade"
+              name="data.especialidade"
+            />
+            <input
+              type="text"
+              placeholder="telefone"
+              [(ngModel)]="data.telefone"
+              name="data.telefone"
+            />
+            <input
+              type="text"
+              placeholder="cep"
+              [(ngModel)]="data.cep"
+              name="data.cep"
+            />
+            <input
+              type="text"
+              placeholder="endereço"
+              [(ngModel)]="data['endereço']"
+              name="data.endereço"
+            />
+            <input
+              type="text"
+              placeholder="numero"
+              [(ngModel)]="data.numero"
+              name="data.numero"
+            />
+            <input
+              type="text"
+              placeholder="cidade"
+              [(ngModel)]="data.cidade"
+              name="data.cidade"
+            />
+          </span>
+          <span>
+            <input
+              type="text"
+              placeholder="bairro"
+              [(ngModel)]="data.bairro"
+              name="data.bairro"
+            />
+            <input
+              type="text"
+              placeholder="estado"
+              [(ngModel)]="data.estado"
+              name="data.estado"
+            />
+            <select type="text" [(ngModel)]="data.status" name="data.status">
+              <option value="" selected disabled hidden>Status</option>
+              <option default value="Ativo">Ativo</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+            <input
+              type="number"
+              placeholder="valor"
+              [(ngModel)]="data['preço']"
+              name="data['preço']"
+            />
+            <p>Funcionamento</p>
+            <input
+              type="text"
+              placeholder="inicio"
+              [(ngModel)]="data.atendimento.inicio"
+              name="data.atendimento.inicio"
+            />
+            <input
+              type="text"
+              placeholder="fim"
+              [(ngModel)]="data.atendimento.fim"
+              name="data.atendimento.fim"
+            />
+          </span>
+        </form>
+        <button (click)="addNewClinic()">EDITAR</button>
       </div>
     </div>
   </body>

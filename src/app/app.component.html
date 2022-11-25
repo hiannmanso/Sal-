@@ -20,4 +20,4 @@
 </div>
 
 <app-header *ngIf="homepage === false"></app-header>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="homepage === false"></router-outlet>

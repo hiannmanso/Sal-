@@ -1,0 +1,43 @@
+body {
+  padding-top: 125px;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 7px;
+  padding: 15px;
+  height: 257px;
+  /* min-width: 200px; */
+}
+.searchtag {
+  width: 25px;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+h1 {
+  color: #4e3d8e;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  color: black;
+}
+.idClinic {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}

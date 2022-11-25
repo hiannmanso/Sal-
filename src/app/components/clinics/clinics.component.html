@@ -7,17 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <app-modal-clinic *ngIf="modal" [modal]="modal"></app-modal-clinic>
+    <app-modal-clinic
+      *ngIf="modal"
+      [modal]="modal"
+      [data]="clinicSchema"
+      [isUpdate]="isUpdate"
+    ></app-modal-clinic>
     <div class="navbar">
       <div class="icons">
-        <input class="search" type="text" placeholder="pesquisar" />
-        <a><img src="{{ searchtag }}" class="searchtag" /></a>
+        <input
+          class="search"
+          type="text"
+          placeholder="Pesquisar"
+          [(ngModel)]="clinicSearch"
+          name="clinicSearch"
+        />
+        <img src="{{ searchtag }}" class="searchtag" (click)="SearchClinic()" />
       </div>
-      <button (click)="setModal()" class="modal">
-        <img />Adicionar nova clínica
+      <button (click)="setModal()" class="newModal">
+        Adicionar nova clínica
       </button>
+      <p (click)="setTable()" class="tableBtn">Mostrar em Tabela</p>
+      <p (click)="setCards()" class="cardBtn">Mostrar em Cards</p>
     </div>
-    <div class="cards">
+    <div *ngIf="showCards" class="cards">
       <div *ngFor="let clinic of clinics" class="card">
         <div class="buttons">
           <img
@@ -62,6 +75,67 @@
           <b>R$ {{ clinic["preço"] }}</b>
         </div>
       </div>
+    </div>
+    <div class="tableContainer">
+      <table *ngIf="showTable" class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Especialidade</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Número</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Status</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Início</th>
+            <th scope="col">Fim</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let clinic of clinics; let i = index" data-index="#i">
+          <tr>
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ clinic.id }}</td>
+            <td>{{ clinic.nome | titlecase }}</td>
+            <td>{{ clinic.cnpj }}</td>
+            <td>{{ clinic.especialidade }}</td>
+            <td>{{ clinic.telefone }}</td>
+            <td>{{ clinic.cep }}</td>
+            <td>{{ clinic["endereço"] }}</td>
+            <td>{{ clinic["numero"] }}</td>
+            <td>{{ clinic["bairro"] }}</td>
+            <td>{{ clinic.cidade }}</td>
+            <td>{{ clinic["estado"] | uppercase }}</td>
+            <td>{{ clinic["status"] | titlecase }}</td>
+            <td>{{ clinic["preço"] }}</td>
+            <td>{{ clinic.atendimento.inicio }}</td>
+            <td>{{ clinic.atendimento.fim }}</td>
+            <td>
+              <div class="buttonsTb">
+                <img
+                  src="{{ edittag }}"
+                  alt="update"
+                  (click)="updateClinic(clinic)"
+                  class="closetag"
+                />
+                <img
+                  src="{{ closetag }}"
+                  alt="x"
+                  (click)="deleteClinic(clinic.id)"
+                  class="edittag"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

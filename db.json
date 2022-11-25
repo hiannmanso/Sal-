@@ -52,7 +52,7 @@
   "clinicas": [
     {
       "id": 1,
-      "nome": "Clinica Abc",
+      "nome": "hiann",
       "cnpj": "56.591.338/0001-10",
       "especialidade": "Exames Laboratoriais",
       "telefone": "(22) 1234-4567",
@@ -63,7 +63,7 @@
       "cidade": "Altair",
       "estado": "SP",
       "status": "Ativo",
-      "preço": 100.0,
+      "preço": 100,
       "atendimento": {
         "inicio": "09:00",
         "fim": "17:00"
@@ -119,7 +119,7 @@
       "bairro": "Cambaratiba",
       "cidade": "Cambaratiba",
       "estado": "sp",
-      "status": "ativo",
+      "status": "Ativo",
       "preço": 147.85,
       "atendimento": {
         "inicio": "08:00",
@@ -138,7 +138,7 @@
       "bairro": "Jardim Moreno",
       "cidade": "São Paulo",
       "estado": "São Paulo",
-      "status": "Sp",
+      "status": "Ativo",
       "preço": 175,
       "atendimento": {
         "inicio": "06:00",
@@ -166,7 +166,7 @@
     },
     {
       "id": 7,
-      "nome": "Laborial",
+      "nome": "Laboriala",
       "cnpj": "95.261.818/0001-74",
       "especialidade": "Exames Laboratóriais",
       "telefone": "3585214793",
@@ -181,6 +181,25 @@
       "atendimento": {
         "inicio": "09:00",
         "fim": "17:00"
+      }
+    },
+    {
+      "id": 8,
+      "nome": "euclinica",
+      "cnpj": "11111139123128",
+      "especialidade": "98312738127823",
+      "telefone": "7389",
+      "cep": "237981273128937128931",
+      "endereço": "7",
+      "numero": "8921738291371289",
+      "bairro": "893389123712897",
+      "cidade": "3218932183712",
+      "estado": "3932183712",
+      "status": "Ativo",
+      "preço": 32198732,
+      "atendimento": {
+        "inicio": "31231",
+        "fim": "3132321"
       }
     }
   ]

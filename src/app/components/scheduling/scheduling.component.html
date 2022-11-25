@@ -1,6 +1,29 @@
-<ul *ngFor="let scheduling of schedulings">
-  <li>paciente: {{ scheduling.paciente }}</li>
-  <li>idClinica: {{ scheduling.idClinica }}</li>
-  <li>dia: {{ scheduling.dia }}</li>
-  <li>hora: {{ scheduling.hora }}</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icons">
+        <input
+          type="text"
+          placeholder="Pesquisar"
+          [(ngModel)]="schedulingSearch"
+          name="schedulingSearch"
+        />
+        <img src="{{ searchtag }}" class="searchtag" (click)="searching()" />
+      </div>
+    </div>
+    <div class="cards">
+      <div *ngFor="let scheduling of schedulings" class="card">
+        <h1>{{ scheduling.paciente | uppercase }}</h1>
+        <h2>Data: <br />{{ scheduling.dia }}|{{ scheduling.hora }}h</h2>
+        <small class="idClinic">idClinica: {{ scheduling.idClinica }}</small>
+      </div>
+    </div>
+  </body>
+</html>

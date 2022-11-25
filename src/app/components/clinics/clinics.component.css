@@ -4,15 +4,20 @@ body {
   word-break: break-word;
   width: 100vw;
 }
-.modal {
+.newModal {
   width: 125px;
   height: 50px;
   background-color: green;
   color: white;
   border-radius: 15px;
   font-size: 12px;
-  margin-left: 15px;
+
   padding: 10px;
+  margin: 0 20px;
+}
+.newModal:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 .cards {
   display: flex;
@@ -27,7 +32,7 @@ body {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 7px;
   padding: 15px;
-  height: 257px;
+  height: 307px;
   /* min-width: 200px; */
 }
 h1,
@@ -82,6 +87,7 @@ small {
 .edittag:hover {
   opacity: 1;
   cursor: pointer;
+  transform: scale(1.2);
 }
 .buttons {
   display: flex;
@@ -91,11 +97,31 @@ small {
   top: 15px;
   right: 15px;
 }
+.navbar p {
+  text-decoration: none;
+  font-weight: 700;
+  padding-left: 10px;
+}
+.navbar .tableBtn {
+  color: #e63564;
+  margin: 0;
+}
+.navbar .cardBtn {
+  color: #4e3d8e;
+  margin: 0;
+}
+.cardBtn:hover,
+.tableBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 15px;
 }
 @media (max-width: 420px) {
   .card {
@@ -129,4 +155,10 @@ small {
     display: flex;
     justify-content: center;
   }
+}
+.tableContainer {
+  padding: 20px;
+}
+table {
+  font-size: 12px;
 }

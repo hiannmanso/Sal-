@@ -41,7 +41,7 @@ export class ClinicService {
     console.log(clinic.id);
     return this.http.put<Clinic>(
       `${this.apiURL}/clinicas/${clinic.id}`,
-      this.data
+      clinic
     );
   }
 }

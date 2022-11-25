@@ -9,6 +9,8 @@ import { SchedulingService } from 'src/app/services/schedulingService/scheduling
 })
 export class SchedulingComponent {
   schedulings: Scheduling[] = [];
+  schedulingSearch: string = '';
+  searchtag: string = '/assets/search.svg';
   constructor(private schedulingService: SchedulingService) {
     this.getSchedulings();
   }
@@ -17,5 +19,20 @@ export class SchedulingComponent {
     this.schedulingService
       .getAll()
       .subscribe((schedulings) => (this.schedulings = schedulings));
+  }
+  searching(): void {
+    console.log('entrou');
+    for (const scheduling of this.schedulings) {
+      if (
+        scheduling.paciente.toUpperCase() ===
+        this.schedulingSearch.toUpperCase()
+      ) {
+        this.schedulings = [scheduling];
+        console.log(scheduling);
+      }
+    }
+    if (this.schedulingSearch === '') {
+      this.getSchedulings();
+    }
   }
 }

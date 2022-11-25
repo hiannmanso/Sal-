@@ -8,6 +8,7 @@ export interface Clinic {
   endereço: string;
   numero: string;
   bairro: string;
+  cidade: string;
   estado: string;
   status: string;
   preço: number;
